@@ -1,16 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="04bc27f0-9c44-49f2-9556-62f74c536040" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" afterPath="$PROJECT_DIR$/.idea/modules.xml" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" afterPath="$PROJECT_DIR$/.idea/vcs.xml" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/Homestead/.gitattributes" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Homestead/CHANGELOG.md" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Homestead/metadata.json" afterPath="$PROJECT_DIR$/Homestead/metadata.json" />
-      <change beforePath="$PROJECT_DIR$/Homestead/readme.md" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/README.md" afterPath="$PROJECT_DIR$/README.md" />
-    </list>
+    <list default="true" id="04bc27f0-9c44-49f2-9556-62f74c536040" name="Default" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -201,12 +192,12 @@
       <workItem from="1512931316185" duration="175000" />
       <workItem from="1512938014511" duration="71000" />
       <workItem from="1512938159748" duration="1340000" />
-      <workItem from="1512950353750" duration="3048000" />
+      <workItem from="1512950353750" duration="3098000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="4753000" />
+    <option name="totallyTimeSpent" value="4803000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
