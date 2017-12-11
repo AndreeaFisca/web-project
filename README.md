@@ -61,5 +61,5 @@ filelor din proiect, astfel daca faceti clone la repository pe desktop map va ar
 comanda functioneaza doar dupa ce instalati git bash: https://git-scm.com/downloads)
 - Porniti VirtualBox
 - Adaugati server.box la VirtualBox folosind in terminal:
-"vagrant box add server file:/Users/user/Desktop/web-project/server.box" (path-ul difera in functie de unde se afla proiectul)
+"vagrant box add server file:/Users/user/Desktop/web-project/Homestead/server.box" (path-ul difera in functie de unde se afla proiectul)
 - Din terminal accesati "Homestead"; din interiorul directorului rulati: "vagrant up —provision"

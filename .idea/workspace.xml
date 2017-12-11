@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="04bc27f0-9c44-49f2-9556-62f74c536040" name="Default" comment="" />
+    <list default="true" id="04bc27f0-9c44-49f2-9556-62f74c536040" name="Default" comment="">
+      <change beforePath="$PROJECT_DIR$/README.md" afterPath="$PROJECT_DIR$/README.md" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -11,12 +13,12 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="README.md" pinned="false" current-in-tab="false">
+      <file leaf-file-name="README.md" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/README.md">
           <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
             <state split_layout="SPLIT">
-              <first_editor relative-caret-position="566">
-                <caret line="57" column="0" lean-forward="true" selection-start-line="57" selection-start-column="0" selection-end-line="57" selection-end-column="0" />
+              <first_editor relative-caret-position="614">
+                <caret line="62" column="20" lean-forward="false" selection-start-line="62" selection-start-column="11" selection-end-line="62" selection-end-column="20" />
                 <folding />
               </first_editor>
               <second_editor />
@@ -44,7 +46,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="metadata.json" pinned="false" current-in-tab="true">
+      <file leaf-file-name="metadata.json" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Homestead/metadata.json">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="165">
@@ -192,12 +194,12 @@
       <workItem from="1512931316185" duration="175000" />
       <workItem from="1512938014511" duration="71000" />
       <workItem from="1512938159748" duration="1340000" />
-      <workItem from="1512950353750" duration="3098000" />
+      <workItem from="1512950353750" duration="3198000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="4803000" />
+    <option name="totallyTimeSpent" value="4903000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
@@ -347,17 +349,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/README.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="SPLIT">
-          <first_editor relative-caret-position="566">
-            <caret line="57" column="0" lean-forward="true" selection-start-line="57" selection-start-column="0" selection-end-line="57" selection-end-column="0" />
-            <folding />
-          </first_editor>
-          <second_editor />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Homestead/readme.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="SPLIT">
@@ -390,6 +381,17 @@
         <state relative-caret-position="165">
           <caret line="11" column="5" lean-forward="true" selection-start-line="11" selection-start-column="5" selection-end-line="11" selection-end-column="5" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/README.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="614">
+            <caret line="62" column="20" lean-forward="false" selection-start-line="62" selection-start-column="11" selection-end-line="62" selection-end-column="20" />
+            <folding />
+          </first_editor>
+          <second_editor />
         </state>
       </provider>
     </entry>
