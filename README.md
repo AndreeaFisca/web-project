@@ -46,6 +46,8 @@ REQUIREMENTS:
 
 INSTRUCTIUNI:
 - Instalati REQUIREMENTS
+- git clone https://github.com/AndreeaFisca/web-project.git (serverul este incarcat pe git folosind git large files,
+astfel pentru folosirea serverul este nevoie de clone, nu este suficienta descarcarea fisierelor manual de pe github)
 - Accesati : web-project/Homestead/Homestead.yaml
 - Modificati:
 
@@ -60,6 +62,6 @@ filelor din proiect, astfel daca faceti clone la repository pe desktop map va ar
 - Daca nu aveti ssh keys setate pe calculator, folositi comanda: " ssh-keygen rsa -C "youremail@yahoo.com" " (daca lucrati pe windows
 comanda functioneaza doar dupa ce instalati git bash: https://git-scm.com/downloads)
 - Porniti VirtualBox
-- Adaugati server.box la VirtualBox folosind in terminal:
-"vagrant box add server file:/Users/user/Desktop/web-project/Homestead/server.box" (path-ul difera in functie de unde se afla proiectul)
-- Din terminal accesati "Homestead"; din interiorul directorului rulati: "vagrant up —provision"
+- Adaugati server.box la VirtualBox folosind in terminal, din interiorul directorului web-project/Homestead:
+"vagrant box add metadata.json"
+- Din interiorul aceluiasi director Homestead rulati: "vagrant up —-provision"
