@@ -1,11 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="04bc27f0-9c44-49f2-9556-62f74c536040" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/Homestead/metadata.json" afterPath="$PROJECT_DIR$/Homestead/metadata.json" />
-      <change beforePath="$PROJECT_DIR$/Homestead/server.box" afterPath="" />
-    </list>
+    <list default="true" id="04bc27f0-9c44-49f2-9556-62f74c536040" name="Default" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -197,12 +193,12 @@
       <workItem from="1512938014511" duration="71000" />
       <workItem from="1512938159748" duration="1340000" />
       <workItem from="1512950353750" duration="3198000" />
-      <workItem from="1512980517387" duration="1114000" />
+      <workItem from="1512980517387" duration="1400000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="6017000" />
+    <option name="totallyTimeSpent" value="6303000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
