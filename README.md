@@ -32,8 +32,34 @@ Tehnologii folosite:
 - Back-end: PHP, MySQL
 - General: JavaScript, RESTful
 
-REQUIREMENTS:
-Vagrant: https://www.vagrantup.com/downloads.html
-VirtualBox: https://www.virtualbox.org/wiki/Downloads
-Composer: https://github.com/composer/windows-setup/releases/tag/v4.8.0
+Structura aplicatiei:
+- I. code (partea de cod a aplicatiei)
+    - a. RESTful API: code/work-web/routes/api.php
+    - b. PHP: code/work-web/app/Http/Controllers
+    - c. ReactJS: code/work-web/resources/assets
+- II. Homestead (serverul local care se ocupa de hosting)
 
+REQUIREMENTS:
+- Vagrant: https://www.vagrantup.com/downloads.html
+- VirtualBox: https://www.virtualbox.org/wiki/Downloads
+- Composer: https://github.com/composer/windows-setup/releases/tag/v4.8.0
+
+INSTRUCTIUNI:
+- Instalati REQUIREMENTS
+- Accesati : web-project/Homestead/Homestead.yaml
+- Modificati:
+
+- folders:
+    - map: ~/web-project/code
+(acest "map" este un guide pentru calea catre aplicatia ce trebuie rulata pe server,
+astfel momentan face point catre fila root al userului curent logat: ~ si restul este structura
+filelor din proiect, astfel daca faceti clone la repository pe desktop map va arata asa:
+- map: ~/Desktop/web-project/code)
+
+- Editati etc/hosts si adaugati o noua linie: "192.168.10.10  work-web.test"
+- Daca nu aveti ssh keys setate pe calculator, folositi comanda: " ssh-keygen rsa -C "youremail@yahoo.com" " (daca lucrati pe windows
+comanda functioneaza doar dupa ce instalati git bash: https://git-scm.com/downloads)
+- Porniti VirtualBox
+- Adaugati server.box la VirtualBox folosind in terminal:
+"vagrant box add server file:/Users/user/Desktop/web-project/server.box" (path-ul difera in functie de unde se afla proiectul)
+- Din terminal accesati "Homestead"; din interiorul directorului rulati: "vagrant up —provision"

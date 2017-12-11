@@ -6,7 +6,7 @@
       "providers":[
         {
           "name":"virtualbox",
-          "url":"mynew.box"
+          "url":"server..box"
         }
       ]
     }
