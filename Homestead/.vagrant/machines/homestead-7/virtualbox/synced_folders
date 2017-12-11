@@ -1,0 +1,1 @@
+{"virtualbox":{"/home/vagrant/projects":{"type":null,"mount_options":["uid=1000","gid=1000"],"guestpath":"/home/vagrant/projects","hostpath":"/Users/serbancristian/web-project/code","disabled":false,"__vagrantfile":true},"/vagrant":{"guestpath":"/vagrant","hostpath":"/Users/serbancristian/web-project/Homestead","disabled":false,"__vagrantfile":true}}}
