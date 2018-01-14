@@ -3,9 +3,11 @@ import ReactDOM from 'react-dom';
 import {
     Route,
     NavLink,
-    HashRouter
+    BrowserRouter,
+    Switch,
+    Redirect
 } from "react-router-dom";
-import Dashboard from "./Dashboard";
+import Jobs from "./Jobs";
 import Sidebar from 'react-sidebar';
 import MaterialTitlePanel from "./Sidebar/MaterialTitlePanel";
 import SidebarContent from "./Sidebar/SidebarContent";
@@ -13,18 +15,24 @@ import Login from "./Login";
 import PropTypes from 'prop-types';
 import withRouter from "react-router-dom/es/withRouter";
 import Globals from "../globals.js";
+import axios from "axios/index";
+import JobsApplications from "./JobsApplications";
 
 const styles = {
     contentHeaderMenuLink: {
         textDecoration: 'none',
         color: 'white',
         padding: 8,
+        cursor: 'pointer'
     },
-    content: {
-        padding: '16px',
-    },
+    header: {
+        width: '100%',
+        backgroundImage: 'url(/images/app-background.jpg)',
+        height: '200px',
+        margin: '0'
+    }
 };
-const SomeComponent = withRouter(props => <Main {...props}/>);
+
 class Main extends Component {
     constructor(props) {
         super(props);
@@ -45,7 +53,10 @@ class Main extends Component {
         this.renderPropNumber = this.renderPropNumber.bind(this);
         this.onSetOpen = this.onSetOpen.bind(this);
         this.menuButtonClick = this.menuButtonClick.bind(this);
+        this.updateUserData = this.updateUserData.bind(this);
     }
+
+
 
     onSetOpen(open) {
         this.setState({open: open});
@@ -83,13 +94,25 @@ class Main extends Component {
             </p>);
     }
 
+    updateUserData(user){
+        if(user !== null && typeof user === 'object'){
+            sessionStorage.setItem('currentUser', JSON.stringify(user));
+        }else{
+            sessionStorage.setItem('currentUser', JSON.stringify(null));
+            this.render();
+        }
+        this.setState({
+            currentUser: user
+        })
+    }
+
     render() {
-        const sidebar = <SidebarContent />;
+        const sidebar = <SidebarContent updateUserData={this.updateUserData} currentUser={this.state.currentUser}/>;
 
         const contentHeader = (
             <span>
         {!this.state.docked &&
-        <a onClick={this.menuButtonClick} href="#" style={styles.contentHeaderMenuLink}>=</a>}
+        <a onClick={this.menuButtonClick} style={styles.contentHeaderMenuLink}>=</a>}
                 <span> Work Web</span>
       </span>);
 
@@ -106,32 +129,36 @@ class Main extends Component {
             transitions: this.state.transitions,
             onSetOpen: this.onSetOpen,
         };
-        if(Object.keys(Globals.currentUser).length === 0) {
-            console.log(Globals);
+
+        if(sessionStorage.getItem('currentUser') == null) {
             return (
-                <HashRouter>
-                    <div style={styles.content}>
-                        <div className="content">
-                            <Route path="/login" component={Login}/>
-                            <Route path="/" component={Login}/>
-                        </div>
-                    </div>
-                </HashRouter>
+                <BrowserRouter>
+                    <Switch>
+                        <Route path="/login/:code/:state" render={() => <Login updateUserData={this.updateUserData} currentUser={this.state.currentUser} />}/>
+                        <Route path="/" render={() => <Login updateUserData={this.updateUserData} currentUser={this.state.currentUser} />}/>
+                        {/*Daca o ruta gresita este accesata userul este redirectionat la / */}
+                        <Route path="*" render={() => <Login updateUserData={this.updateUserData} currentUser={this.state.currentUser} />}/> />
+                    </Switch>
+                </BrowserRouter>
             )
         }
+
+        this.state.currentUser = JSON.parse(sessionStorage.getItem('currentUser'));
+
         return (
-            <Sidebar {...sidebarProps}>
-                <MaterialTitlePanel title={contentHeader}>
-                    <HashRouter>
-                        <div style={styles.content}>
-                            <div className="content">
-                                <Route path="/dashboard" component={Dashboard}/>
-                                <Route path="/jobs" component={JobsManagement}/>
-                            </div>
-                        </div>
-                    </HashRouter>
-                </MaterialTitlePanel>
-            </Sidebar>
+            <BrowserRouter>
+                <Sidebar {...sidebarProps}>
+                    <MaterialTitlePanel title={contentHeader}>
+                        <div className='row' style={styles.header}></div>
+                        <Switch>
+                            <Route path="/jobs" render={() => <Jobs updateUserData={this.updateUserData} currentUser={this.state.currentUser} />}/>
+                            {/*Daca o ruta gresita este accesata userul este redirectionat la /jobs*/}
+                            <Route path='/jobs-applications' render={() => <JobsApplications updateUserData={this.updateUserData} currentUser={this.state.currentUser}/>}/>
+                            <Route path="*" render={() => <Jobs updateUserData={this.updateUserData} currentUser={this.state.currentUser} />}/>
+                        </Switch>
+                    </MaterialTitlePanel>
+                </Sidebar>
+            </BrowserRouter>
         );
     }
 }

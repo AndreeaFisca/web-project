@@ -3,13 +3,13 @@ import ReactDOM from 'react-dom';
 import {
     Route,
     NavLink,
-    HashRouter,
     withRouter
 } from "react-router-dom";
 import { Redirect } from 'react-router';
-import Dashboard from "./Dashboard";
-import Main from "./Main";
-import Globals from "../globals.js";
+import Jobs from './Jobs';
+import Main from './Main';
+import Globals from '../globals.js';
+import axios from 'axios';
 
 const styles = {
     loginInstructions: {
@@ -20,31 +20,74 @@ const styles = {
     },
     panel: {
         width: "420px",
-        marginTop: "30px"
+        marginTop: "200px",
+        marginBottom: "30px"
     },
     logo: {
         maxWidth: "250px"
+    },
+    mainDiv: {
+        width: '100%',
+        height: '100%',
+        background: '#2c3e50',
+        display: 'inline-block'
     }
 };
 class Login extends Component{
     constructor(props) {
         super(props);
         this.state = {
-            username: '',
-            password: '',
-            redirect: false
+            linkedInUrl: ''
         };
         this.onChange = this.onChange.bind(this);
         this.onSubmit = this.onSubmit.bind(this);
     }
+    componentWillMount(){
+        const query = new URLSearchParams(this.props.location.search);
+
+        if(query.get('code') && query.get('state')){
+            const code = query.get('code');
+            axios.post(Globals.API + '/user/save', {
+                code: code,
+            })
+                .then((response) => {
+                    if(response.data.success == true){
+                        this.props.updateUserData(response.data.user);
+                        this.props.history.push("/jobs");
+                    }
+                })
+                .catch((error) => {
+                    console.log(error);
+                })
+        }
+
+    }
+    componentDidMount(){
+        axios.get(Globals.API + '/auth/login')
+            .then((response) => {
+                this.setState({linkedInUrl: response.data.url});
+            })
+            .catch((error)=>{
+                console.log(error);
+            });
+    }
     onSubmit(e){
         e.preventDefault();
+        this.props.updateUserData(response.data.user);
         Globals.currentUser={
-            username: this.state.username
+            username: this.state.username,
+            password: this.state.password
         };
-        if(this.state.username.length !==0 && this.state.password.length !==0){
-            this.setState({redirect: true});
-        }
+        axios.post('http://work-web.test/api/auth/login', {
+            user: Globals.currentUser
+        })
+            .then(function (response) {
+                //this.setState({redirect: true});
+            })
+            .catch(function (error) {
+                console.log(error);
+            });
+
     }
     //Cand se introduc date in input le adaugam in variabilele din state
     onChange(e) {
@@ -53,25 +96,31 @@ class Login extends Component{
         this.setState(state);
     }
     render() {
-        const { username, password } = this.state;
-        if (this.state.redirect) {
-            console.log(Globals.currentUser);
-            return <Redirect push to="/dashboard" />;
-        }
+        const { username, password, linkedInUrl } = this.state;
+
         return (
-            <div className="panel center-block" style={styles.panel}>
-                <div className="text-center">
-                    <img src="../../images/logo.png" alt="logo" style={styles.logo}/>
-                </div>
-                <div className="panel-body">
-                    <p className="text-center" style={styles.loginInstructions}>
-                        Login to continue
-                    </p>
-                    <form onSubmit={this.onSubmit}>
-                        <input type="text" name="username" value={username} className="form-control form-group" onChange={this.onChange}/>
-                        <input type="text" name="password" value={password} className="form-control form-group" onChange={this.onChange}/>
-                        <button type="submit" className="btn btn-block btn-primary" style={styles.loginButton}>Login</button>
-                    </form>
+            <div style={styles.mainDiv}>
+                <div className="panel center-block" style={styles.panel}>
+                    <div className="text-center">
+                        <img src="/images/logo.png" alt="logo" style={styles.logo}/>
+                    </div>
+                    <div className="panel-body">
+                        <a href={linkedInUrl} className="btn btn-block btn-social btn-linkedin">
+                            <span className="fa fa-linkedin"></span>
+                            Sign in with LinkedIn
+                        </a>
+                        {/*<p className="text-center" style={styles.loginInstructions}>*/}
+                            {/*Login to continue*/}
+                        {/*</p>*/}
+                        {/*<form onSubmit={this.onSubmit}>*/}
+                            {/*<input type="text" name="username" value={username} className="form-control form-group" onChange={this.onChange}/>*/}
+                            {/*<input type="text" name="password" value={password} className="form-control form-group" onChange={this.onChange}/>*/}
+                            {/*<button type="submit" className="btn btn-block btn-primary" style={styles.loginButton}>Login</button>*/}
+                        {/*</form>*/}
+                    </div>
+                    <div className="panel-footer">
+
+                    </div>
                 </div>
             </div>
         )

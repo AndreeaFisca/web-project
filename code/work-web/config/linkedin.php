@@ -8,6 +8,7 @@
  */
 
 return [
-    'api_key' => env('LINKEDIN_KEY','yourapikey'),
-    'api_secret' => env('LINKEDIN_SECRET','yourapisecret'),
+    'api_key' => env('LINKEDIN_KEY','77pl1izghz2c8d'),
+    'api_secret' => env('LINKEDIN_SECRET','qaVwvb0v0u2XjAyI'),
+    'redirect_uri' => 'http://work-web.test/login'
 ];

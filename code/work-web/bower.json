@@ -1,0 +1,23 @@
+{
+  "name": "work-web",
+  "description": "",
+  "main": "",
+  "authors": [
+    "AndreeaFisca <andreeaelenafisca@gmail.com>"
+  ],
+  "license": "MIT",
+  "homepage": "https://github.com/AndreeaFisca/web-project",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "public/bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "components-font-awesome": "^4.7.0",
+    "bootstrap-social": "^5.1.1"
+  }
+}
