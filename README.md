@@ -13,19 +13,18 @@ Identificare apeluri API:
  - HEADER: Authorization BasicAQV5dJZRk7xl4u2bHRZxVOKx9b9UohPSJSatSejfQgjukBfySBVsiBL4kb0Ey8rWbIXtvk8BtbebtF1mgtBU5grpH55t9J2UBx-nslGK_TsLvn5zA8Hf3e4G69-WdxzF_nnfPj4SmEOmR72F2wEy2iLB9i1t3sDYGQpLQJ-mM1LdMo82Jn4zPlx6144XZ0TdgS1WOLbIsoHT9pLkfuK8QMHsmefYPQHt76lSSW_G8i6X0cdOOqPm1hWb0wDCxvpBmhkR48JCrzLYlWiYHh36J7qEGzSrpX8xQ2Up8dhxNMz6wYeERqryWsUwBs5V4tro3kJSBO2zE-H8lUOK6R9ktEFbqmRHaA
  
  - READ GET /v1/people/~:(id,num-connections,picture-url)?format=json
-    Route::get('auth/login', 'AuthController@login');
-    Route::post('user/save', 'UserController@saveUser');
-    Route::group(['middleware' => ['auth_check']], function () {
-        Route::get('companies/get', 'CompaniesController@getCompanies');
-        Route::post('companies/add', 'CompaniesController@saveCompany');
-        Route::delete('companies/delete-company', 'CompaniesController@deleteCompany');
-        Route::post('jobs/add', 'JobsController@addJobs');
-        Route::delete('jobs/delete-job', 'JobsController@deleteJob');
-        Route::get('jobs-applications/get', 'JobsApplicationsController@getJobsApplications');
-        Route::post('jobs-applications/add-job-application', 'JobsApplicationsController@addJobApplication');
-        Route::put('jobs-applications/status', 'JobsApplicationsController@updateJobApplicationStatus');
-        Route::delete('user/delete', 'UserController@deleteUser');
-    });
+ - GET 'auth/login'
+ - POST 'user/save'
+ - GET 'companies/get'
+ - POST 'companies/add'
+ - DELETE 'companies/delete-company'
+ - POST 'jobs/add'
+ - DELETE 'jobs/delete-job'
+ - GET 'jobs-applications/get'
+ - POST 'jobs-applications/add-job-application'
+ - PUT 'jobs-applications/status'
+ - DELETE 'user/delete'
+
 Definire actiuni utilizator:
 - Login
 - Aplicare job
