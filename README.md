@@ -2,35 +2,38 @@
 Gestionare profile candidati integrat cu LinkedIn (sau aplicare la un job)
 
 Componente identificate:
-- Lista candidati
+- Login
 - Lista job-uri
-- Profil candidat
-- Cautare candidat
-- Bara de actiuni (Action bar)
+- Profil utilizator
+- Lista aplicari la job-uri pentru utilizatorul curent
+- Meniu
 
 Identificare apeluri API:
- - BASE URL: https://api.linkedin.com/
- - READ GET /v1/companies/{id}?format=json
- -> sample response
-{
-  "id": 1337,
-  "name": "LinkedIn"
-}
- - READ GET /v1/people/~?format=json
+ - BASE URL: http://work-web.test
  - READ GET /v1/people/~:(id,num-connections,picture-url)?format=json
- - READ GET /voyager/api/identity/profiles/cristian-serban-416484110/profileView
- - READ GET /voyager/api/search/facets?_bustCache=ember3748&guides=List()&keywords=andrew
- 
+    Route::get('auth/login', 'AuthController@login');
+    Route::post('user/save', 'UserController@saveUser');
+    Route::group(['middleware' => ['auth_check']], function () {
+        Route::get('companies/get', 'CompaniesController@getCompanies');
+        Route::post('companies/add', 'CompaniesController@saveCompany');
+        Route::delete('companies/delete-company', 'CompaniesController@deleteCompany');
+        Route::post('jobs/add', 'JobsController@addJobs');
+        Route::delete('jobs/delete-job', 'JobsController@deleteJob');
+        Route::get('jobs-applications/get', 'JobsApplicationsController@getJobsApplications');
+        Route::post('jobs-applications/add-job-application', 'JobsApplicationsController@addJobApplication');
+        Route::put('jobs-applications/status', 'JobsApplicationsController@updateJobApplicationStatus');
+        Route::delete('user/delete', 'UserController@deleteUser');
+    });
 Definire actiuni utilizator:
-- Vizualizarea candidatilor dintr-o categorie (acceptati/respinsi)
-- Cautare candidat dupa nume
-- Adaugare candidat
-- Mutare candidat dintr-o categorie in alta
+- Login
+- Aplicare job
+- Deconectare
+- Afisare list aplicari la job-uri
 
 Tehnologii folosite:
 - Front-end: HTML, CSS, Bootstrap
 - Back-end: PHP, MySQL
-- General: JavaScript, RESTful
+- General: JavaScript, RESTful, ReactJs, Laravel
 
 Structura aplicatiei:
 - I. code (partea de cod a aplicatiei)
