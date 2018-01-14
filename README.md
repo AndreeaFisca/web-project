@@ -12,7 +12,6 @@ Identificare apeluri API:
  - BASE URL: http://work-web.test
  - HEADER: Authorization BasicAQV5dJZRk7xl4u2bHRZxVOKx9b9UohPSJSatSejfQgjukBfySBVsiBL4kb0Ey8rWbIXtvk8BtbebtF1mgtBU5grpH55t9J2UBx-nslGK_TsLvn5zA8Hf3e4G69-WdxzF_nnfPj4SmEOmR72F2wEy2iLB9i1t3sDYGQpLQJ-mM1LdMo82Jn4zPlx6144XZ0TdgS1WOLbIsoHT9pLkfuK8QMHsmefYPQHt76lSSW_G8i6X0cdOOqPm1hWb0wDCxvpBmhkR48JCrzLYlWiYHh36J7qEGzSrpX8xQ2Up8dhxNMz6wYeERqryWsUwBs5V4tro3kJSBO2zE-H8lUOK6R9ktEFbqmRHaA
  
- - READ GET /v1/people/~:(id,num-connections,picture-url)?format=json
  - GET 'auth/login'
  - POST 'user/save'
  - GET 'companies/get'
