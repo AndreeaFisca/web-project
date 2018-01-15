@@ -68,3 +68,4 @@ comanda functioneaza doar dupa ce instalati git bash: https://git-scm.com/downlo
 - Adaugati server.box la VirtualBox folosind in terminal, din interiorul directorului web-project/Homestead:
 "vagrant box add metadata.json"
 - Din interiorul aceluiasi director Homestead rulati: "vagrant up —-provision"
+- Din interiorul code/work-web rulati npm install si composer install
